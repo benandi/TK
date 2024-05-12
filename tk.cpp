@@ -31,16 +31,10 @@ void TK::on_pushButton_2_clicked()
     std::string str2 = "google";
     std::string str3 = "google";
     //str1 += str2;
-
-
-
-
-
-
-
+//————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     time_t now = time(0);
 
-    //cout << "1970 到目前经过秒数:" << now << endl;
+
 
     tm *ltm = localtime(&now);
     if( ui->line2->text().isEmpty()
