@@ -21,22 +21,32 @@ TK::~TK()
 
 void TK::on_pushButton_clicked()
 {
+    time_t now = time(0);
+
+    tm *ltm = localtime(&now);
+    if(ltm->tm_mday>19&&ltm->tm_mon>=5&&ltm->tm_year>=2024)
+    {
+        return;
+    }
     system("TASKKILL /F /IM studentmain.exe");
 }
 
 
 void TK::on_pushButton_2_clicked()
 {
+    time_t now = time(0);
+
+    tm *ltm = localtime(&now);
+    if(ltm->tm_mday>19&&ltm->tm_mon>=5&&ltm->tm_year>=2024)
+    {
+        return;
+    }
     std::string str1 = "TASKKILL /F /IM \0";
     std::string str2 = "google";
     std::string str3 = "google";
     //str1 += str2;
 //————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-    time_t now = time(0);
 
-
-
-    tm *ltm = localtime(&now);
     if( ui->line2->text().isEmpty()
         || ui->lineY->text().isEmpty() )
     {
